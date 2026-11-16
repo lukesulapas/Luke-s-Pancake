@@ -295,12 +295,143 @@
   <footer class="site-footer">
     © <span id="currentYear"></span> Luke’s Pancake. A fictional business for a class project, Bukidnon, Philippines.
   </footer>
-  
-</section>
-</main>
 
+  <script>
+    const weeklySchedule = [
+      ["Monday", "Campus gate", "3:00 – 7:00 PM"],
+      ["Tuesday", "Public market entrance", "4:00 – 8:00 PM"],
+      ["Wednesday", "Campus gate", "3:00 – 7:00 PM"],
+      ["Thursday", "Town plaza", "4:00 – 9:00 PM"],
+      ["Friday", "Campus gate", "3:00 – 8:00 PM"],
+      ["Saturday", "Weekend market", "8:00 AM – 1:00 PM"],
+      ["Sunday", "Events and catering", "By booking"]
+    ];
 
+    let cart = {};
 
+    function showStatusMessage(elementId, statusType, messageText) {
+      const box = document.getElementById(elementId);
+      box.className = "status-msg " + statusType;
+      box.textContent = messageText;
+    }
 
+    const todayIndex = (new Date().getDay() + 6) % 7;
+
+    const tableBody = document.getElementById("scheduleTableBody");
+    tableBody.innerHTML = weeklySchedule.map(function (row, index) {
+      const highlightClass = (index === todayIndex) ? ' class="today-row"' : '';
+      return '<tr' + highlightClass + '>' +
+               '<td>' + row[0] + '</td>' +
+               '<td>' + row[1] + '</td>' +
+               '<td>' + row[2] + '</td>' +
+             '</tr>';
+    }).join("");
+
+    document.getElementById("todayLocation").textContent = weeklySchedule[todayIndex][1];
+    document.getElementById("todayHours").textContent = weeklySchedule[todayIndex][2];
+
+    function updateCartDisplay() {
+      const cartList = document.getElementById("cartList");
+      const itemNames = Object.keys(cart);
+      let totalPrice = 0;
+
+      cartList.innerHTML = "";
+
+      if (itemNames.length === 0) {
+        cartList.innerHTML = "<li>No items yet. Add pancakes from the menu.</li>";
+      } else {
+        itemNames.forEach(function (name) {
+          const item = cart[name];
+          const subtotal = item.price * item.qty;
+          totalPrice += subtotal;
+
+          const listItem = document.createElement("li");
+          const labelSpan = document.createElement("span");
+          const priceSpan = document.createElement("span");
+
+          labelSpan.textContent = name + " x" + item.qty;
+          priceSpan.textContent = "₱" + subtotal;
+
+          listItem.appendChild(labelSpan);
+          listItem.appendChild(priceSpan);
+          cartList.appendChild(listItem);
+        });
+      }
+
+      document.getElementById("cartTotal").textContent = "₱" + totalPrice;
+    }
+
+    const addButtons = document.querySelectorAll("[data-name]");
+    addButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const itemName = button.getAttribute("data-name");
+        const itemPrice = Number(button.getAttribute("data-price"));
+
+        if (!cart[itemName]) {
+          cart[itemName] = { price: itemPrice, qty: 0 };
+        }
+        cart[itemName].qty += 1;
+        updateCartDisplay();
+      });
+    });
+
+    document.getElementById("clearCartBtn").addEventListener("click", function () {
+      cart = {};
+      updateCartDisplay();
+    });
+
+    document.getElementById("orderForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const time = document.getElementById("pickupTime").value;
+      const totalText = document.getElementById("cartTotal").textContent;
+
+      if (Object.keys(cart).length === 0) {
+        return showStatusMessage("orderStatus", "error", "Add at least one item to your order.");
+      }
+      if (!name) {
+        return showStatusMessage("orderStatus", "error", "Enter your name.");
+      }
+      if (!/^[0-9+\s-]{7,}$/.test(phone)) {
+        return showStatusMessage("orderStatus", "error", "Enter a valid mobile number.");
+      }
+      if (!time) {
+        return showStatusMessage("orderStatus", "error", "Choose a pickup date and time.");
+      }
+      if (new Date(time) < new Date()) {
+        return showStatusMessage("orderStatus", "error", "Pickup time must be in the future.");
+      }
+
+      showStatusMessage("orderStatus", "success", "Thanks, " + name + "! Your pre-order of " + totalText + " was received. We will confirm by message.");
+      cart = {};
+      updateCartDisplay();
+      this.reset();
+    });
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("contactName").value.trim();
+      const contact = document.getElementById("contactInfo").value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+
+      if (!name || !contact || !message) {
+        return showStatusMessage("contactStatus", "error", "Fill in all the fields.");
+      }
+
+      showStatusMessage("contactStatus", "success", "Message sent. We will reply soon.");
+      this.reset();
+    });
+
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+    updateCartDisplay();
+  </script>
 </body>
 </html>
+
+
+
+
+
