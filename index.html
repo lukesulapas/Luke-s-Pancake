@@ -112,7 +112,77 @@
             </div>
           </article>
 
-          
+          <article class="menu-card">
+            <div class="menu-card-image">
+              <img src="Mango-Pancakes-Recipe-Featured.jpg" alt="Pancakes topped with whipped cream and diced mango">
+              <span class="price-tag">₱90</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Mango Cream</h3>
+              <p>Sweet diced mango on a cloud of whipped cream.</p>
+              <button class="btn" data-name="Mango Cream" data-price="90">Add</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="addons-box">
+          <h3>Add-ons</h3>
+          <div class="addon-list">
+            <button class="addon-btn" data-name="Extra Chocolate" data-price="15">Extra Chocolate ₱15</button>
+            <button class="addon-btn" data-name="Grated Cheese" data-price="15">Grated Cheese ₱15</button>
+            <button class="addon-btn" data-name="Whipped Cream" data-price="20">Whipped Cream ₱20</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="order-section" id="order">
+      <div class="container two-columns">
+        <div>
+          <h2>Order ahead, skip the line</h2>
+          <p class="section-subtitle">Add your pancakes, pick a pickup time, and send. We confirm by message, then cook when you arrive.</p>
+
+          <div class="receipt-box">
+            <h3>Your order</h3>
+            <ul id="cartList"></ul>
+            <div class="cart-total">
+              <span>Total</span>
+              <span id="cartTotal">₱0</span>
+            </div>
+            <button class="btn btn-purple" id="clearCartBtn" type="button">Clear order</button>
+          </div>
+        </div>
+
+        <form id="orderForm" novalidate>
+          <label for="customerName">
+            Your name
+            <input id="customerName" type="text" autocomplete="name" required>
+          </label>
+          <label for="customerPhone">
+            Mobile number
+            <input id="customerPhone" type="tel" autocomplete="tel" placeholder="09XX XXX XXXX" required>
+          </label>
+          <label for="pickupTime">
+            Pickup date and time
+            <input id="pickupTime" type="datetime-local" required>
+          </label>
+          <button class="btn" type="submit">Send pre-order</button>
+          <div class="status-msg" id="orderStatus" role="status"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="truck">
+      <div class="container">
+        <h2>Where’s the truck today?</h2>
+        <p class="section-subtitle">Our weekly stops. Schedules can change, so check here before you go.</p>
+
+        <div class="today-banner">
+          <span>Today we are at</span>
+          <strong id="todayLocation"></strong>
+          <span id="todayHours"></span>
+        </div>
+        
 </section>
 </main>
 
