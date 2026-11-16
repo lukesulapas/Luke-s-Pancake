@@ -310,3 +310,139 @@ nav a:hover {
   font-size: 1.3rem;
   margin-bottom: 12px;
 }
+
+.addon-list {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.addon-btn {
+  border: 2px solid var(--ube);
+  background-color: #ffffff;
+  color: var(--ube);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font: 700 0.95rem var(--body-font);
+  cursor: pointer;
+}
+
+.addon-btn:hover {
+  background-color: var(--ube);
+  color: #ffffff;
+}
+
+.order-section {
+  background-color: var(--deep);
+  color: #ffffff;
+}
+
+.order-section .section-subtitle {
+  color: #D9CBEF;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.receipt-box {
+  background-color: #ffffff;
+  color: var(--ink);
+  border-radius: 20px;
+  padding: 24px;
+  border-top: 10px solid var(--corn);
+}
+
+.receipt-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+}
+
+#cartList {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+#cartList li {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #cbbfe0;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font: 800 1.3rem var(--display-font);
+  margin: 10px 0 14px;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+.order-section form {
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 24px;
+}
+
+label {
+  font-weight: 700;
+  font-size: 0.92rem;
+  display: grid;
+  gap: 5px;
+}
+
+input, textarea, select {
+  width: 100%;
+  font: inherit;
+  padding: 11px 12px;
+  border: 2px solid #cbbfe0;
+  border-radius: 10px;
+  background-color: #ffffff;
+  color: var(--ink);
+}
+
+input:focus, textarea:focus {
+  border-color: var(--corn);
+  outline: none;
+}
+
+.status-msg {
+  display: none;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+.status-msg.success {
+  display: block;
+  background-color: #E3F6E5;
+  color: #1D5B2A;
+}
+
+.status-msg.error {
+  display: block;
+  background-color: #FDE4E4;
+  color: #8A1F1F;
+}
+
+.today-banner {
+  background-color: var(--corn);
+  border-radius: 22px;
+  padding: 22px 26px;
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
