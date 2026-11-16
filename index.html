@@ -182,7 +182,120 @@
           <strong id="todayLocation"></strong>
           <span id="todayHours"></span>
         </div>
-        
+
+         <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Stop</th>
+              <th>Hours</th>
+            </tr>
+          </thead>
+          <tbody id="scheduleTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="container">
+        <h2>Fresh off the griddle</h2>
+        <p class="section-subtitle">A few of the stacks that leave the truck every day.</p>
+        <div class="polaroid-grid">
+          <figure class="polaroid">
+            <img src="b7blp4xy4qmd1.jpeg" alt="Ube pancakes" loading="lazy">
+            <figcaption>Ube-Cheese</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img src="Corn-Pancakes-4.jpg" alt="Sweet corn pancakes" loading="lazy">
+            <figcaption>Sweet Corn</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img src="Mango-Pancakes-Recipe-Featured.jpg" alt="Mango cream pancakes" loading="lazy">
+            <figcaption>Mango Cream</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img src="images.jpg" alt="Banana chocolate pancakes" loading="lazy">
+            <figcaption>Banana-Choco</figcaption>
+          </figure>
+          <figure class="polaroid">
+            <img src="Classic-Buttermilk-Pancakes-WEB-21.jpg" alt="Classic buttermilk pancakes" loading="lazy">
+            <figcaption>Classic Stack</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <h2>What customers say</h2>
+        <p class="section-subtitle">Early words from the people in line.</p>
+        <div class="reviews-grid">
+          <blockquote>
+            <p>The Ube-Cheese stack is my after-class treat. Hot, soft, and not too sweet.</p>
+            <footer>Mika, college student</footer>
+          </blockquote>
+          <blockquote>
+            <p>I pre-ordered for the whole office and everything was ready when I got there.</p>
+            <footer>Mr. Santos, office worker</footer>
+          </blockquote>
+          <blockquote>
+            <p>They catered our school program, and the kids asked for more Sweet Corn pancakes.</p>
+            <footer>Ma’am Dela Cruz, teacher</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container two-columns">
+        <div>
+          <h2>About us</h2>
+          <p>Luke’s Pancake is a food truck that moves between schools, markets, and community events in Bukidnon. We serve warm, affordable, freshly made pancakes with a local twist.</p>
+          <p>Our Sweet Corn pancake is a nod to Bukidnon’s corn-growing heritage, and every stack is cooked only after you order it.</p>
+        </div>
+        <div class="catering-card">
+          <h3>Planning an event?</h3>
+          <p>We cater school programs, birthdays, and fairs. Tell us the date, place, and number of guests.</p>
+          <a class="btn btn-purple" href="#contact">Ask about catering</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container two-columns">
+        <div>
+          <h2>Contact</h2>
+          <p class="section-subtitle">Questions, events, or bulk orders? Send a message here or find us on social media.</p>
+          <div class="social-links">
+            <a class="btn btn-purple" href="https://m.me/" target="_blank" rel="noopener">Open Messenger</a>
+            <a class="btn" href="https://facebook.com/" target="_blank" rel="noopener">Facebook page</a>
+          </div>
+        </div>
+
+        <form id="contactForm" novalidate>
+          <label for="contactName">
+            Name
+            <input id="contactName" type="text" autocomplete="name" required>
+          </label>
+          <label for="contactInfo">
+            Email or mobile number
+            <input id="contactInfo" type="text" required>
+          </label>
+          <label for="contactMessage">
+            Message
+            <textarea id="contactMessage" rows="4" placeholder="Event date, place, and number of guests" required></textarea>
+          </label>
+          <button class="btn btn-purple" type="submit">Send inquiry</button>
+          <div class="status-msg" id="contactStatus" role="status"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © <span id="currentYear"></span> Luke’s Pancake. A fictional business for a class project, Bukidnon, Philippines.
+  </footer>
+  
 </section>
 </main>
 
