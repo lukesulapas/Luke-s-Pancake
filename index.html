@@ -1,62 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Luke’s Pancake | Fresh pancakes on wheels in Bukidnon</title>
-<meta name="description" content="Luke’s Pancake is a food truck in Bukidnon serving made-to-order pancakes with Filipino flavors. See the menu, find the truck, and pre-order for pickup.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luke’s Pancake | Fresh pancakes on wheels in Bukidnon</title>
+  <meta name="description" content="Luke’s Pancake is a food truck in Bukidnon serving made-to-order pancakes with Filipino flavors. See the menu, find the truck, and pre-order for pickup.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
-  <div class="wrap bar">
-    <a class="logo" href="#home">Luke’s Pancake</a>
-    <nav aria-label="Main">
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#menu">Menu</a></li>
-        <li><a href="#order">Order Now</a></li>
-        <li><a href="#truck">Find the Truck</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 
-<main>
-<section class="hero" id="home">
-  <div class="wrap">
-    <div>
-      <h1>Hot pancakes, <span>parked near you.</span></h1>
-      <p>Soft stacks cooked the moment you order, with Filipino flavors like ube, mango, and Bukidnon sweet corn. See where the truck is today, then order ahead and skip the line.</p>
-      <div class="cta">
-        <a class="btn" href="#order">Order now</a>
-        <a class="btn ghost" href="#truck">Find the truck</a>
+  <header>
+    <div class="container navbar">
+      <a class="logo" href="#home">Luke’s Pancake</a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#order">Order Now</a></li>
+          <li><a href="#truck">Find the Truck</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <h1>Hot pancakes, <span>parked near you.</span></h1>
+          <p>Soft stacks cooked the moment you order, with Filipino flavors like ube, mango, and Bukidnon sweet corn. See where the truck is today, then order ahead and skip the line.</p>
+          <div class="hero-buttons">
+            <a class="btn" href="#order">Order now</a>
+            <a class="btn btn-outline" href="#truck">Find the truck</a>
+          </div>
+        </div>
+        <div class="hero-image-box">
+          <img src="b7blp4xy4qmd1.jpeg" alt="A stack of purple ube pancakes covered in cream and ube powder">
+          <div class="badge">Made to order</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="highlights-strip">
+      <div class="container">
+        <span>Pre-order for pickup</span>
+        <span>Daily truck location</span>
+        <span>Event catering</span>
+        <span>From ₱60</span>
       </div>
     </div>
-    <div class="frame">
-      <img src="b7blp4xy4qmd1.jpeg" alt="A stack of purple ube pancakes covered in cream and ube powder">
-      <div class="sticker">Made to order</div>
-    </div>
-  </div>
-</section>
 
-<div class="strip">
-  <div class="wrap">
-    <span>Pre-order for pickup</span>
-    <span>Daily truck location</span>
-    <span>Event catering</span>
-    <span>From ₱60</span>
-  </div>
-</div>
+    <section id="menu">
+      <div class="container">
+        <h2>The menu</h2>
+        <p class="section-subtitle">Five stacks, all cooked fresh. Press Add to put one in your pre-order.</p>
 
+        <div class="menu-grid">
+          <article class="menu-card">
+            <div class="menu-card-image">
+              <img src="Classic-Buttermilk-Pancakes-WEB-21.jpg" alt="Buttermilk pancakes with butter, syrup, strawberries, and blueberries">
+              <span class="price-tag">₱60</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Classic Buttermilk Stack</h3>
+              <p>Three fluffy pancakes with butter and warm syrup.</p>
+              <button class="btn" data-name="Classic Buttermilk Stack" data-price="60">Add</button>
+            </div>
+          </article>
 
+          <article class="menu-card">
+            <div class="menu-card-image">
+              <img src="Corn-Pancakes-4.jpg" alt="A tall stack of golden sweet corn pancakes" style="object-position: center 30%;">
+              <span class="price-tag">₱75</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Sweet Corn Pancake</h3>
+              <p>Bukidnon sweet corn cooked right into the batter.</p>
+              <button class="btn" data-name="Sweet Corn Pancake" data-price="75">Add</button>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-image">
+              <img src="images.jpg" alt="Pancakes topped with banana slices, chocolate chips, and syrup">
+              <span class="price-tag">₱80</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Banana-Choco</h3>
+              <p>Sliced banana, chocolate chips, and a drizzle of syrup.</p>
+              <button class="btn" data-name="Banana-Choco" data-price="80">Add</button>
+            </div>
+          </article>
+
+          <article class="menu-card">
+            <div class="menu-card-image">
+              <img src="b7blp4xy4qmd1.jpeg" alt="Ube pancakes with melted cheese cream">
+              <span class="price-tag">₱90</span>
+            </div>
+            <div class="menu-card-body">
+              <h3>Ube-Cheese</h3>
+              <p>Purple ube pancakes with a creamy cheese topping.</p>
+              <button class="btn" data-name="Ube-Cheese" data-price="90">Add</button>
+            </div>
+          </article>
+
+          
 </section>
 </main>
 
